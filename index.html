@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<TITLE>FizzBuzz</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+function callNumber(form){
+    Number=document.testform.inputbox1.value
+    Time=document.testform.inputbox2.value
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", "https://floating-inlet-76345.herokuapp.com/MakeCall?Number="+Number+"&Time="+Time, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<FORM NAME="testform">
+<BR>
+<label>Enter Phone Number: 
+<INPUT TYPE="text" NAME="inputbox1" VALUE="xxxxxxxxxx" SIZE=50><P></label>
+<label>Enter Time Delay (Seconds): 
+<INPUT TYPE="text" NAME="inputbox2" VALUE=" " SIZE=50><P></label>
+<INPUT TYPE="button" VALUE="Call" onClick="callNumber()"><BR>
+</FORM>
+</BODY>
+</HTML>
